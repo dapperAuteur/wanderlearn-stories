@@ -2,8 +2,8 @@
 //
 // Better Auth manages its own user/session/account/verification tables
 // when its Drizzle adapter is wired up in Phase 3 — those are NOT here.
-// This file holds the *child-data* tables that plan 07 mandates and
-// that Phase 3 of plan 12 will run migrations against.
+// This file holds the *child-data* tables that plan 08 mandates and
+// that Phase 3 of plan 13 will run migrations against.
 //
 // Compile-only at the moment: no DATABASE_URL on most environments
 // yet, so drizzle-kit migrations don't run. The schema still
@@ -40,7 +40,7 @@ export const parents = pgTable("parents", {
     .notNull(),
 });
 
-/** Child profile. First name + age band only — plan 07 minimization rule. */
+/** Child profile. First name + age band only — plan 08 minimization rule. */
 export const children = pgTable("children", {
   id: uuid("id").defaultRandom().primaryKey(),
   parentId: uuid("parent_id")
@@ -57,7 +57,7 @@ export const children = pgTable("children", {
  * VPC consent record. One row per (parent, child) per consent grant.
  * Revocation is a separate row with `revokedAt` populated, not an
  * update — keeps the audit trail intact for the FTC enforcement
- * window (plan 07: 7-year retention on consent records).
+ * window (plan 08: 7-year retention on consent records).
  */
 export const consents = pgTable("consents", {
   id: uuid("id").defaultRandom().primaryKey(),
@@ -77,8 +77,8 @@ export const consents = pgTable("consents", {
 });
 
 /**
- * Child telemetry. Plan 08 §"Diagnostic events". 18-month retention
- * (plan 07) implemented as a Vercel cron in Phase 3 that deletes rows
+ * Child telemetry. Plan 09 §"Diagnostic events". 18-month retention
+ * (plan 08) implemented as a Vercel cron in Phase 3 that deletes rows
  * older than the cutoff.
  */
 export const events = pgTable("events", {
@@ -94,7 +94,7 @@ export const events = pgTable("events", {
 });
 
 /**
- * Append-only audit log. Plan 07 §"Engineering checklist" requires
+ * Append-only audit log. Plan 08 §"Engineering checklist" requires
  * a Postgres trigger to enforce append-only at the database level
  * (UPDATE / DELETE raise an exception). The trigger is added in a
  * post-generated migration file (drizzle-kit can't express triggers
