@@ -8,8 +8,13 @@ interface CurriculumReadyDetail {
   curriculum: Curriculum;
 }
 
+interface SceneAliceProps {
+  /** Which hub of Alice to render. Defaults to Hub 1 (The Descent). */
+  hubId?: string;
+}
+
 /**
- * Mounts the A-Frame scene for Alice in Wonderland's Hub 1.
+ * Mounts the A-Frame scene for a hub of Alice in Wonderland.
  * Lazy-loads aframe + scene components via dynamic import so the
  * marketing routes don't ship a-frame's ~250 KB.
  *
@@ -21,7 +26,9 @@ interface CurriculumReadyDetail {
  * scene behind a "Begin" button that doubles as the audio-unlock
  * gesture and the visual "ready" cue.
  */
-export default function SceneAlice() {
+export default function SceneAlice({
+  hubId = "h1-descent",
+}: SceneAliceProps = {}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
@@ -54,7 +61,7 @@ export default function SceneAlice() {
             vr-mode-ui="enabled: false"
             cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 2000"
             raycaster="objects: .gaze-target"
-            curriculum-loader="bookId: alice; hubId: h1-descent"
+            curriculum-loader="bookId: alice; hubId: ${hubId}"
             class="w-full h-full"
           >
             <a-camera position="0 1.6 0" look-controls wasd-controls-enabled="false">
@@ -81,7 +88,7 @@ export default function SceneAlice() {
       audioRef.current = null;
       if (container) container.innerHTML = "";
     };
-  }, []);
+  }, [hubId]);
 
   const handleBegin = () => {
     setStarted(true);
