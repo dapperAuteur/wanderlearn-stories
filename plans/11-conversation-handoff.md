@@ -24,14 +24,14 @@ This doc tells a fresh chat in that directory how to pick up cold.
 - Source design docs (`360Gem Alice in Wonderland Docs ver 2.md`,
   `gemini-code-1777169028788.md`) archived under
   `plans/_archive/`. They are reference only.
-- Next.js 16 scaffold staged on the `chore/scaffold` branch:
+- Next.js 16 scaffold landed on `main` locally:
   `package.json`, `tsconfig.json`, `next.config.ts`,
   `postcss.config.mjs`, `eslint.config.mjs`, `.gitignore`, `.nvmrc`,
   minimal `src/app/` (layout + placeholder home + globals.css), and
   the placeholder directory structure from plan 02.
-- A `chore/scaffold` branch exists locally with two commits. **No
-  remote yet.** GitHub repo creation + first push is BAM's task per
-  [10-bootstrap-checklist.md](10-bootstrap-checklist.md).
+- `main` has four commits (three agent-authored, one BAM-authored
+  README touch-up) and **no remote yet**. GitHub repo creation + first
+  push is BAM's task per [10-bootstrap-checklist.md](10-bootstrap-checklist.md).
 - The agent's auto-memory has a namespace seeded for this directory:
   `~/.claude/projects/-Users-bam-Code-NOiCloud-ai-builds-gemini-wanderlearn-wanderlearn-stories/memory/`
   with the ecosystem-wide feedback rules (branch→commit→push→stop,
@@ -72,7 +72,8 @@ The first thing the new conversation should do:
 3. Read [10-bootstrap-checklist.md](10-bootstrap-checklist.md) to see
    where the user is in the repo-creation arc.
 4. Check git state with `git status` and `git log --oneline -20` to
-   see whether `chore/scaffold` has been pushed / merged yet.
+   see whether `main` has been pushed yet (and which other branches
+   exist locally vs. on origin).
 5. Only after all of that, propose the next step.
 
 If the user's first message in the new chat is "what's next?" or
