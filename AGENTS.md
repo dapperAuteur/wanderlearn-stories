@@ -3,9 +3,10 @@
 **Wanderlearn Stories.** Local dir: `wanderlearn-stories`. Distinct
 product from Wanderlearn classic; both live under WitUS.
 
-**Authoritative spec:** the [`plans/`](plans/README.md) directory.
-This file is a quick-reference for agents; the plans are the source
-of truth.
+**Authoritative spec:** the local `plans/` directory (gitignored —
+not in this repo). This file is the in-repo agent contract; the local
+plans hold the longer reasoning. Ask BAM if you need a plan and don't
+have it locally.
 
 ## Parent: WitUS — "Live Long. Work Free."
 
@@ -28,7 +29,7 @@ content, no fabricated voices. Wanderlearn Stories is **synthetic
 literary worlds**. Same umbrella name, different product, incompatible
 content rules. Don't conflate them in copy or code.
 
-See [plans/00-product-brief.md](plans/00-product-brief.md).
+See plan 00 (product brief, local).
 
 ## Resolved ecosystem decisions
 
@@ -76,9 +77,9 @@ Applies to every repo in the BAM ecosystem.
   app code has no direct A-Frame imports outside the scene route.
 - Data-driven only — no hardcoded curriculum facts. All content from
   zod-validated JSON served by Route Handlers.
-- Performance budget per [plans/05-performance-budget.md](plans/05-performance-budget.md).
-  Mobile budgets are hard limits, not targets. Low-end mobile (iPhone SE
-  1st gen, Fire HD 8) is the gate.
+- Performance budget per plan 05 (local). Mobile budgets are hard
+  limits, not targets. Low-end mobile (iPhone SE 1st gen, Fire HD 8)
+  is the gate.
 - No `alert()`. Custom HTML overlays (`<dialog>`) only.
 - No Unity / Unreal — strictly WebXR.
 - No third-party advertising / behavioral SDKs anywhere on the site.
