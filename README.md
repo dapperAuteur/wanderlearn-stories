@@ -10,9 +10,9 @@ curriculum mapped to Indiana K standards. Part of the WitUS ecosystem.
 
 ## Authoritative spec
 
-[`plans/`](plans/README.md) — every product, scope, and technical
-decision lives there. The plans supersede anything in
-[`plans/_archive/`](plans/_archive/).
+The detailed planning docs live in a local-only `plans/` directory
+(gitignored). Resolved decisions are summarized in
+[`AGENTS.md`](AGENTS.md). Ask BAM if you need a specific plan.
 
 ## Quickstart (local dev)
 
@@ -37,7 +37,7 @@ Then open http://localhost:3000.
 | Media            | Cloudinary (shared WitUS tenant)                                        |
 | Hosting          | Vercel                                                                  |
 
-See [plans/02-tech-stack.md](plans/02-tech-stack.md) for rationale.
+See plan 02 (tech-stack rationale, local).
 
 ## Layout
 
@@ -74,6 +74,6 @@ See [`AGENTS.md`](AGENTS.md). Notably:
 
 ## Bootstrap status
 
-The repo is at the **scaffold-staged** stage. Next steps for BAM are in
-[plans/10-bootstrap-checklist.md](plans/10-bootstrap-checklist.md).
+The repo is at the **scaffold-staged** stage. Next steps for BAM live
+in the local `plans/10-bootstrap-checklist.md`.
 # wanderlearn-stories
