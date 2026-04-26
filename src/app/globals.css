@@ -3,9 +3,21 @@
 @import "shadcn/tailwind.css";
 
 /*
-  Wanderlearn Stories palette — warm, light, storybook feel.
-  Light-mode only at MVP; .dark block intentionally omitted (we'll add a
-  toggle if/when the parent dashboard wants one).
+  Wanderlearn Stories palette — Easter / pastel storybook feel.
+  Butter cream background, warm-plum body text, Easter-rose CTA,
+  pale-mint secondary, soft-lavender accent. Light-mode only at MVP;
+  .dark block intentionally omitted (we'll add a toggle if/when the
+  parent dashboard wants one).
+
+  Contrast notes:
+  - foreground (oklch 0.28) on background (0.985) is well above AA.
+  - primary at oklch L=0.55 + white text is ~AA for large text and
+    very close to AA for normal text; we keep CTA labels at min text-base
+    (16px) which crosses the WCAG large-text threshold of 18.66px when
+    bold, or use larger sizing on CTAs.
+  - secondary/muted/accent backgrounds use deeper-lightness foregrounds
+    of the same hue so chips/badges read on AA without the pastel feel
+    going gray.
 */
 
 @theme inline {
@@ -63,51 +75,51 @@
 :root {
   color-scheme: light;
 
-  /* Surfaces — warm cream + ivory cards on a sand-bordered field. */
-  --background: oklch(0.97 0.018 75);     /* cream */
-  --foreground: oklch(0.22 0.025 50);     /* deep warm brown */
-  --card: oklch(0.995 0.005 75);          /* ivory */
-  --card-foreground: oklch(0.22 0.025 50);
-  --popover: oklch(0.995 0.005 75);
-  --popover-foreground: oklch(0.22 0.025 50);
+  /* Surfaces — butter cream field + near-white ivory cards. */
+  --background: oklch(0.985 0.012 90);   /* butter cream */
+  --foreground: oklch(0.28 0.05 320);    /* warm dusty plum */
+  --card: oklch(0.995 0.005 90);         /* near-white butter */
+  --card-foreground: oklch(0.28 0.05 320);
+  --popover: oklch(0.995 0.005 90);
+  --popover-foreground: oklch(0.28 0.05 320);
 
-  /* Primary — rich amber/terracotta for CTAs (AA on cream). */
-  --primary: oklch(0.55 0.16 50);
+  /* Primary — Easter rose for CTAs (deep enough to pass AA with white). */
+  --primary: oklch(0.55 0.18 15);
   --primary-foreground: oklch(1 0 0);
 
-  /* Secondary — warm sand for non-primary buttons / chips. */
-  --secondary: oklch(0.93 0.025 70);
-  --secondary-foreground: oklch(0.3 0.025 50);
+  /* Secondary — pale mint for chips, secondary buttons, info pills. */
+  --secondary: oklch(0.92 0.05 165);
+  --secondary-foreground: oklch(0.3 0.06 165);
 
-  /* Muted — softest warm beige; muted-foreground is warm gray-brown. */
-  --muted: oklch(0.94 0.015 75);
-  --muted-foreground: oklch(0.5 0.025 60);
+  /* Muted — pale butter; muted-foreground is soft plum-gray. */
+  --muted: oklch(0.95 0.03 95);
+  --muted-foreground: oklch(0.5 0.04 320);
 
-  /* Accent — rosy terracotta highlight for tertiary use. */
-  --accent: oklch(0.6 0.16 25);
-  --accent-foreground: oklch(1 0 0);
+  /* Accent — soft lavender for tertiary highlights. */
+  --accent: oklch(0.85 0.1 295);
+  --accent-foreground: oklch(0.3 0.08 295);
 
   --destructive: oklch(0.58 0.21 27);
-  --border: oklch(0.88 0.025 70);
-  --input: oklch(0.88 0.025 70);
-  --ring: oklch(0.55 0.16 50);
+  --border: oklch(0.9 0.03 95);
+  --input: oklch(0.9 0.03 95);
+  --ring: oklch(0.55 0.18 15);
 
-  /* Five-color chart palette tuned to the storybook feel — not so saturated
-     that a parent dashboard looks like a toy. */
-  --chart-1: oklch(0.7 0.15 50);   /* amber */
-  --chart-2: oklch(0.65 0.15 25);  /* rose */
-  --chart-3: oklch(0.62 0.14 145); /* sage */
-  --chart-4: oklch(0.55 0.13 230); /* soft blue */
-  --chart-5: oklch(0.6 0.13 295);  /* gentle violet */
+  /* Five-color chart palette — full pastel quintet (pink, mint, butter,
+     sky, lavender). Storybook-bright but not garish on a parent dashboard. */
+  --chart-1: oklch(0.78 0.14 15);   /* pastel pink / coral */
+  --chart-2: oklch(0.78 0.13 165);  /* pastel mint */
+  --chart-3: oklch(0.86 0.14 95);   /* butter yellow */
+  --chart-4: oklch(0.78 0.13 235);  /* pastel sky blue */
+  --chart-5: oklch(0.78 0.13 295);  /* pastel lavender */
 
-  --sidebar: oklch(0.95 0.018 75);
-  --sidebar-foreground: oklch(0.22 0.025 50);
-  --sidebar-primary: oklch(0.55 0.16 50);
+  --sidebar: oklch(0.97 0.02 90);
+  --sidebar-foreground: oklch(0.28 0.05 320);
+  --sidebar-primary: oklch(0.55 0.18 15);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.93 0.025 70);
-  --sidebar-accent-foreground: oklch(0.3 0.025 50);
-  --sidebar-border: oklch(0.88 0.025 70);
-  --sidebar-ring: oklch(0.55 0.16 50);
+  --sidebar-accent: oklch(0.92 0.05 165);
+  --sidebar-accent-foreground: oklch(0.3 0.06 165);
+  --sidebar-border: oklch(0.9 0.03 95);
+  --sidebar-ring: oklch(0.55 0.18 15);
 
   --radius: 0.625rem;
 }
