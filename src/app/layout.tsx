@@ -11,7 +11,7 @@ const geist = Geist({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FBF6EC",
+  themeColor: "#FDF8EE",
   colorScheme: "light",
 };
 

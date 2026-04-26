@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 
 const primaryClasses =
-  "inline-flex items-center min-h-11 px-5 rounded-lg bg-[#B45309] text-white hover:bg-[#92400E] font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B45309]";
+  "inline-flex items-center min-h-11 px-5 rounded-lg bg-[#C73E5C] text-white hover:bg-[#A03048] font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C73E5C]";
 
 const secondaryClasses =
-  "inline-flex items-center min-h-11 px-5 rounded-lg border border-[#E8DCC8] hover:bg-[#F1E9DA] text-[#2A1F12] font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B45309]";
+  "inline-flex items-center min-h-11 px-5 rounded-lg border border-[#ECE3D0] hover:bg-[#F5EDD9] text-[#3F1A4A] font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C73E5C]";
 
 // global-error replaces the root layout entirely (own <html>/<body>).
 // Theme tokens may not resolve if the layout failed before <body> mounted,
@@ -26,20 +26,20 @@ export default function GlobalError({
 
   return (
     <html lang="en">
-      <body className="antialiased min-h-screen bg-[#FBF6EC] text-[#2A1F12] flex items-center justify-center px-6 font-sans">
+      <body className="antialiased min-h-screen bg-[#FDF8EE] text-[#3F1A4A] flex items-center justify-center px-6 font-sans">
         <div className="max-w-2xl text-center">
-          <p className="text-sm font-medium text-[#B45309] tracking-wide uppercase">
+          <p className="text-sm font-medium text-[#C73E5C] tracking-wide uppercase">
             Something went wrong
           </p>
-          <h1 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-[#2A1F12]">
+          <h1 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-[#3F1A4A]">
             The app couldn&apos;t start.
           </h1>
-          <p className="mt-6 text-base text-[#6B5B47]">
+          <p className="mt-6 text-base text-[#7E6273]">
             Wanderlearn Stories ran into an error before the page could
             load. Reloading usually fixes it.
           </p>
           {error.digest && (
-            <p className="mt-3 text-sm text-[#6B5B47] font-mono">
+            <p className="mt-3 text-sm text-[#7E6273] font-mono">
               Error reference: {error.digest}
             </p>
           )}
