@@ -9,15 +9,10 @@ Tasks for BAM, in order. Each task lists exact commands. Items in
 
 ### A1. Confirm repo name
 
-Working name: `learn360` (local dir). Plans assume the GitHub repo will
-be `wanderlearn-stories`. Decide:
+Local dir is `wanderlearn-stories`. Plans assume the GitHub repo name
+matches.
 
-- [ ] Final GitHub repo name (suggested: `wanderlearn-stories`).
-- [ ] Whether to rename the local dir from `learn360` →
-      `wanderlearn-stories` before initializing git. Renaming later is
-      possible but breaks any open editor sessions and bookmarks. If
-      keeping `learn360`, that's fine — local name and GitHub name
-      don't have to match.
+- [ ] Final GitHub repo name (default: `wanderlearn-stories`).
 
 ### A2. Confirm Vercel project name
 
@@ -91,7 +86,7 @@ locally** (no remote yet). Steps to publish:
 ### C1. Create the empty GitHub repo
 
 ```bash
-cd /Users/bam/Code_NOiCloud/ai-builds/gemini/wanderlearn/learn360
+cd /Users/bam/Code_NOiCloud/ai-builds/gemini/wanderlearn/wanderlearn-stories
 
 gh repo create dapperAuteur/wanderlearn-stories \
   --private \

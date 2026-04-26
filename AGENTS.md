@@ -1,8 +1,7 @@
 # Wanderlearn Stories — agent rules
 
-Working repo name: `learn360` (placeholder). Product name:
-**Wanderlearn Stories**. Distinct product from Wanderlearn classic;
-both live under WitUS.
+**Wanderlearn Stories.** Local dir: `wanderlearn-stories`. Distinct
+product from Wanderlearn classic; both live under WitUS.
 
 **Authoritative spec:** the [`plans/`](plans/README.md) directory.
 This file is a quick-reference for agents; the plans are the source

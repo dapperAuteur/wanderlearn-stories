@@ -1,7 +1,7 @@
 # Wanderlearn Stories — plans index
 
-Working repo name: `learn360` (placeholder). Product name: **Wanderlearn Stories**.
-Distinct product from Wanderlearn classic. Both live under WitUS.
+**Wanderlearn Stories.** Local dir: `wanderlearn-stories`. Distinct product
+from Wanderlearn classic. Both live under WitUS.
 
 Read in order. Each doc resolves a specific gap from the design-doc critique
 (2026-04-25).

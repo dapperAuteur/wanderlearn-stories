@@ -4,9 +4,15 @@ This project's design conversation happened in a Claude Code session
 opened from `/Users/bam/Code_NOiCloud/ai-builds/gemini/witus`. Before
 implementation work begins, the conversation should move *into* the
 project's own directory:
-`/Users/bam/Code_NOiCloud/ai-builds/gemini/wanderlearn/learn360`.
+`/Users/bam/Code_NOiCloud/ai-builds/gemini/wanderlearn/wanderlearn-stories`.
 
 This doc tells a fresh chat in that directory how to pick up cold.
+
+> **History note:** the local dir was originally `learn360` (a working
+> title from Gemini Code) and was renamed to `wanderlearn-stories` at
+> the end of the design session. The agent's memory namespace was moved
+> to match. If you find any stale `learn360` reference in code or docs,
+> it's a leftover — fix it.
 
 ## What's done
 
@@ -27,7 +33,7 @@ This doc tells a fresh chat in that directory how to pick up cold.
   remote yet.** GitHub repo creation + first push is BAM's task per
   [10-bootstrap-checklist.md](10-bootstrap-checklist.md).
 - The agent's auto-memory has a namespace seeded for this directory:
-  `~/.claude/projects/-Users-bam-Code-NOiCloud-ai-builds-gemini-wanderlearn-learn360/memory/`
+  `~/.claude/projects/-Users-bam-Code-NOiCloud-ai-builds-gemini-wanderlearn-wanderlearn-stories/memory/`
   with the ecosystem-wide feedback rules (branch→commit→push→stop,
   no sycophancy) and a project memory pointing at this plans
   directory.
@@ -35,7 +41,8 @@ This doc tells a fresh chat in that directory how to pick up cold.
 ## What's not done (move-the-chat-blockers: none)
 
 Everything below can happen from a fresh chat in
-`learn360/`. Nothing in this list needs to happen *before* moving.
+`wanderlearn-stories/`. Nothing in this list needs to happen *before*
+moving.
 
 - GitHub repo creation + first push (plan 10, section C).
 - `/vercel:bootstrap` run (plan 10, section D1).
@@ -55,7 +62,7 @@ See plan 10, section E. Tracked here so they aren't forgotten:
 - Asset authoring (`.glb` hubs, audio narration).
 - Pilot cohort recruitment for the comprehension baseline.
 
-## How a fresh chat in `learn360/` should orient itself
+## How a fresh chat in `wanderlearn-stories/` should orient itself
 
 The first thing the new conversation should do:
 
@@ -79,8 +86,9 @@ Captured here so they aren't lost between sessions:
 
 - BAM does not want sycophancy or cheerleading. Default to hard
   critique. Surfaced in the no-sycophancy memory.
-- "Wanderlearn Stories" is the product name; `learn360` is a working
-  local-directory name. They don't have to match.
+- "Wanderlearn Stories" is the product name. The local dir was
+  originally `learn360` (a working title) and was renamed to
+  `wanderlearn-stories` to match the GitHub repo and product name.
 - Wanderlearn classic (`wanderlearn-app`) is a separate product, not a
   parent. Don't bundle them, don't share copy beyond the WitUS umbrella.
 - The originating use case (BAM's child) is a forcing function for

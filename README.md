@@ -1,6 +1,6 @@
 # Wanderlearn Stories
 
-Working repo name: `learn360`. Product name: **Wanderlearn Stories**.
+Local dir: `wanderlearn-stories`. GitHub repo (planned): `dapperAuteur/wanderlearn-stories`.
 
 360° public-domain literary worlds for ages 4–7, with kindergarten-readiness
 curriculum mapped to Indiana K standards. Part of the WitUS ecosystem.

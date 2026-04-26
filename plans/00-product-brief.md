@@ -22,7 +22,7 @@ content rules are incompatible:
 | Subject corpus     | Open / location-driven                   | Public-domain literature only     |
 | Audience default   | Adult / lifelong learner                 | Children 4–7 (MVP)                |
 | Brand promise      | "Real places, real footage, no AI"       | "Step inside a story you've read" |
-| Repo               | `wanderlearn-app`                        | `learn360` (this repo)            |
+| Repo               | `wanderlearn-app`                        | `wanderlearn-stories` (this repo) |
 | Domain             | `wanderlearn.witus.online`               | `stories.wanderlearn.witus.online`|
 
 The two share: WitUS umbrella branding, Better Auth identity (so a parent
