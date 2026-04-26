@@ -96,6 +96,13 @@ if (typeof window !== "undefined" && window.AFRAME) {
         }
 
         scene.emit?.("curriculum-ready", { hub });
+        // Document-level event so the React mount can read the hub
+        // (narration URL, etc.) without crossing the A-Frame boundary.
+        document.dispatchEvent(
+          new CustomEvent("wls:curriculum-ready", {
+            detail: { hub, curriculum },
+          }),
+        );
       } catch (err) {
         console.error("[curriculum-loader] error", err);
       }
