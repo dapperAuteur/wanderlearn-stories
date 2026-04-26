@@ -42,3 +42,5 @@ next-env.d.ts
 # large 3D / audio source files — never in git, distribute via Cloudinary
 *.glb.bak
 /assets-source/
+
+plans/
