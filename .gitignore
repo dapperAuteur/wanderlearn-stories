@@ -43,5 +43,4 @@ next-env.d.ts
 *.glb.bak
 /assets-source/
 
-# spec / planning docs — local-only across the BAM ecosystem
-/plans/
+plans/

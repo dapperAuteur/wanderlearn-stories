@@ -1,0 +1,9 @@
+{
+  "bookId": "alice",
+  "title": "Alice's Adventures in Wonderland",
+  "publicDomainSource": {
+    "title": "Alice's Adventures in Wonderland",
+    "edition": "1865 / Macmillan, public domain",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/11"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "hubId": "h1-descent",
+  "bookId": "alice",
+  "chapterRange": "Ch. 1",
+  "environmentModel": "/assets/models/alice/hub-1-descent.glb",
+  "narrationAudio": "https://res.cloudinary.com/witus/audio/alice/hub-1-narration.ogg",
+  "textExcerpt": "Down, down, down. Would the fall never come to an end?",
+  "eggs": [
+    {
+      "eggId": "h1-clocks-count",
+      "position": [0, 2.2, -3],
+      "meshType": "primitive-sphere",
+      "subject": "math",
+      "standards": [
+        {
+          "framework": "indiana-k",
+          "code": "K.NS.1",
+          "description": "Count to 100 by ones and tens."
+        },
+        {
+          "framework": "indiana-k",
+          "code": "K.NS.4",
+          "description": "Cardinality: the last number named tells how many."
+        }
+      ],
+      "interactions": [
+        {
+          "tier": 1,
+          "trigger": "gaze",
+          "dwellMs": 2000,
+          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h1-clocks-count.ogg",
+          "cardTitle": "Count the clocks!",
+          "cardBody": "1, 2, 3, 4, 5… how many clocks are floating past Alice?",
+          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h1-clocks-count.png"
+        }
+      ]
+    },
+    {
+      "eggId": "h1-bookshelves",
+      "position": [-2.5, 1.6, -2],
+      "meshType": "primitive-cube",
+      "subject": "ela",
+      "standards": [
+        {
+          "framework": "indiana-k",
+          "code": "K.RL.1",
+          "description": "With prompting and support, ask and answer questions about a text."
+        }
+      ],
+      "interactions": [
+        {
+          "tier": 1,
+          "trigger": "gaze",
+          "dwellMs": 2000,
+          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h1-bookshelves.ogg",
+          "cardTitle": "What's the title?",
+          "cardBody": "This book is called Alice's Adventures in Wonderland. What do you see on the cover?",
+          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h1-bookshelves.png"
+        }
+      ]
+    },
+    {
+      "eggId": "h1-rabbit-pace",
+      "position": [2, 0.8, -2.5],
+      "meshType": "primitive-sphere",
+      "subject": "math",
+      "standards": [
+        {
+          "framework": "indiana-k",
+          "code": "K.NS.2",
+          "description": "Count forward beginning from a given number within the known sequence."
+        }
+      ],
+      "interactions": [
+        {
+          "tier": 1,
+          "trigger": "gaze",
+          "dwellMs": 2000,
+          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h1-rabbit-pace.ogg",
+          "cardTitle": "Keep counting!",
+          "cardBody": "The Rabbit hopped past saying 'six!' Can you keep going? 7, 8, 9…",
+          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h1-rabbit-pace.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "hubId": "h2-hall",
+  "bookId": "alice",
+  "chapterRange": "Ch. 1–2",
+  "environmentModel": "/assets/models/alice/hub-2-hall.glb",
+  "narrationAudio": "https://res.cloudinary.com/witus/audio/alice/hub-2-narration.ogg",
+  "textExcerpt": "There were doors all round the hall, but they were all locked.",
+  "eggs": [
+    {
+      "eggId": "h2-door-compare",
+      "position": [0, 1.4, -3],
+      "meshType": "primitive-cube",
+      "subject": "math",
+      "standards": [
+        {
+          "framework": "indiana-k",
+          "code": "K.M.1",
+          "description": "Make direct comparisons of length, capacity, weight, and temperature using comparative language."
+        },
+        {
+          "framework": "indiana-k",
+          "code": "K.M.2",
+          "description": "Describe measurable attributes of a single object using appropriate vocabulary."
+        }
+      ],
+      "interactions": [
+        {
+          "tier": 1,
+          "trigger": "gaze",
+          "dwellMs": 2000,
+          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h2-door-compare.ogg",
+          "cardTitle": "Tall and tiny.",
+          "cardBody": "One door is taller than Alice. The other door is shorter. Which one is shorter?",
+          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h2-door-compare.png"
+        }
+      ]
+    },
+    {
+      "eggId": "h2-key-shape",
+      "position": [-1.2, 0.9, -2],
+      "meshType": "primitive-sphere",
+      "subject": "math",
+      "standards": [
+        {
+          "framework": "indiana-k",
+          "code": "K.G.1",
+          "description": "Identify and describe shapes regardless of orientation or overall size."
+        }
+      ],
+      "interactions": [
+        {
+          "tier": 1,
+          "trigger": "gaze",
+          "dwellMs": 2000,
+          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h2-key-shape.ogg",
+          "cardTitle": "Circles and rectangles.",
+          "cardBody": "The top of the key is a circle. The long part is a rectangle. Can you find another circle in the room?",
+          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h2-key-shape.png"
+        }
+      ]
+    },
+    {
+      "eggId": "h2-drink-bigger",
+      "position": [1.2, 0.9, -2],
+      "meshType": "primitive-cube",
+      "subject": "math",
+      "standards": [
+        {
+          "framework": "indiana-k",
+          "code": "K.M.1",
+          "description": "Make direct comparisons of length, capacity, weight, and temperature using comparative language."
+        }
+      ],
+      "interactions": [
+        {
+          "tier": 1,
+          "trigger": "gaze",
+          "dwellMs": 2000,
+          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h2-drink-bigger.ogg",
+          "cardTitle": "Bigger or smaller?",
+          "cardBody": "Alice drinks from the bottle. Now she is smaller. If she eats the cake, will she be bigger or smaller?",
+          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h2-drink-bigger.png"
+        }
+      ]
+    }
+  ]
+}
