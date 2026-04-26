@@ -11,8 +11,8 @@ const geist = Geist({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#020617",
-  colorScheme: "dark",
+  themeColor: "#FBF6EC",
+  colorScheme: "light",
 };
 
 export const metadata: Metadata = {
@@ -48,13 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geist.variable} antialiased min-h-screen flex flex-col`}
-      >
+    <html lang="en" className={geist.variable}>
+      <body className="antialiased min-h-screen flex flex-col">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-slate-950 focus:font-semibold focus:rounded-lg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:font-semibold focus:rounded-lg"
         >
           Skip to content
         </a>

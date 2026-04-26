@@ -2,24 +2,24 @@ import Link from "next/link";
 import { ecosystemProducts, PARENT_TAGLINE } from "@/lib/ecosystem";
 
 const linkClasses =
-  "inline-flex items-center min-h-[32px] py-1 hover:text-white transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded";
+  "inline-flex items-center min-h-[32px] py-1 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 mt-24">
-      <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-start sm:justify-between gap-10 text-sm text-slate-300">
+    <footer className="border-t border-border mt-24 bg-background">
+      <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-start sm:justify-between gap-10 text-sm">
         <div>
-          <p className="font-semibold text-white mb-1">
-            Wanderlearn <span className="text-indigo-400">Stories</span>
+          <p className="font-semibold text-foreground mb-1">
+            Wanderlearn <span className="text-primary">Stories</span>
           </p>
-          <p className="mb-3">{PARENT_TAGLINE}</p>
-          <p className="text-slate-400">
+          <p className="mb-3 text-muted-foreground">{PARENT_TAGLINE}</p>
+          <p className="text-muted-foreground">
             A B4C LLC /{" "}
             <a
               href="https://awesomewebstore.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-white transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded"
+              className="underline underline-offset-2 hover:text-foreground transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
             >
               AwesomeWebStore.com
               <span className="sr-only"> (opens in new tab)</span>
@@ -30,7 +30,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 w-full sm:w-auto">
           <div>
-            <p className="text-white font-medium mb-2">Ecosystem</p>
+            <p className="text-foreground font-medium mb-2">Ecosystem</p>
             <ul className="space-y-1">
               {ecosystemProducts.map((product) => (
                 <li key={product.slug}>
@@ -48,7 +48,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-white font-medium mb-2">Stories</p>
+            <p className="text-foreground font-medium mb-2">Stories</p>
             <ul className="space-y-1">
               <li>
                 <Link href="/about" className={linkClasses}>
@@ -60,11 +60,11 @@ export default function Footer() {
                   Library
                 </Link>
               </li>
-              <li className="text-slate-400 italic">Alice (coming soon)</li>
+              <li className="text-muted-foreground italic">Alice (coming soon)</li>
             </ul>
           </div>
           <div>
-            <p className="text-white font-medium mb-2">Parents</p>
+            <p className="text-foreground font-medium mb-2">Parents</p>
             <ul className="space-y-1">
               <li>
                 <Link href="/dashboard" className={linkClasses}>
@@ -84,7 +84,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-white font-medium mb-2">Legal</p>
+            <p className="text-foreground font-medium mb-2">Legal</p>
             <ul className="space-y-1">
               <li>
                 <Link href="/terms" className={linkClasses}>
@@ -97,10 +97,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="mailto:privacy@witus.online"
-                  className={linkClasses}
-                >
+                <a href="mailto:privacy@witus.online" className={linkClasses}>
                   privacy@witus.online
                 </a>
               </li>

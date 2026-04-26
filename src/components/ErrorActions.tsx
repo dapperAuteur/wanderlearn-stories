@@ -9,10 +9,10 @@ interface ErrorActionsProps {
 }
 
 const primaryClasses =
-  "inline-flex items-center min-h-11 px-5 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+  "inline-flex items-center min-h-11 px-5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
 
 const secondaryClasses =
-  "inline-flex items-center min-h-11 px-5 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-200 font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+  "inline-flex items-center min-h-11 px-5 rounded-lg border border-border hover:bg-secondary text-foreground font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
 
 export default function ErrorActions({
   onReset,
