@@ -1,4 +1,10 @@
 import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+} from "@/components/ui/card";
 
 export default function HomePage() {
   return (
@@ -38,33 +44,39 @@ export default function HomePage() {
         aria-label="At a glance"
         className="mt-20 grid gap-6 sm:grid-cols-3"
       >
-        <div className="rounded-xl border border-border bg-card p-5">
-          <p className="text-xs font-medium text-primary uppercase tracking-wide">
-            Books we know
-          </p>
-          <p className="mt-2 text-base text-card-foreground">
+        <Card>
+          <CardHeader>
+            <CardDescription className="text-primary text-xs font-medium uppercase tracking-wide">
+              Books we know
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-base text-card-foreground">
             Public-domain literature only. The first world is{" "}
             <em>Alice&apos;s Adventures in Wonderland</em>.
-          </p>
-        </div>
-        <div className="rounded-xl border border-border bg-card p-5">
-          <p className="text-xs font-medium text-primary uppercase tracking-wide">
-            Standards-aligned
-          </p>
-          <p className="mt-2 text-base text-card-foreground">
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardDescription className="text-primary text-xs font-medium uppercase tracking-wide">
+              Standards-aligned
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-base text-card-foreground">
             Every learning moment maps to an Indiana Kindergarten standard.
             Reviewed by a licensed K teacher before launch.
-          </p>
-        </div>
-        <div className="rounded-xl border border-border bg-card p-5">
-          <p className="text-xs font-medium text-primary uppercase tracking-wide">
-            Parent-first
-          </p>
-          <p className="mt-2 text-base text-card-foreground">
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardDescription className="text-primary text-xs font-medium uppercase tracking-wide">
+              Parent-first
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-base text-card-foreground">
             Verifiable parental consent before any data collection. No ads,
             no behavioral tracking, no third-party SDKs.
-          </p>
-        </div>
+          </CardContent>
+        </Card>
       </section>
     </div>
   );
