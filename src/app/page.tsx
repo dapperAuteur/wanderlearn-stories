@@ -12,7 +12,7 @@ export default function HomePage() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
           Wanderlearn{" "}
-          <span className="text-primary font-medium">Stories</span> rebuilds
+          <span className="text-primary font-medium">Stories{" "}</span> rebuilds
           public-domain children&apos;s books as 360° worlds, with
           kindergarten-readiness curriculum mapped to Indiana K standards.
           Built for ages 4–7. Plays in any browser.
