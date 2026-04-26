@@ -48,3 +48,4 @@ plans/
 # lighthouse-ci output
 /.lighthouseci/
 /lighthouseci-data/
+/test-results/
