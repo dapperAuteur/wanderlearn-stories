@@ -44,3 +44,8 @@ next-env.d.ts
 /assets-source/
 
 plans/
+
+# playwright output
+/test-results/
+/playwright-report/
+/playwright/.cache/
