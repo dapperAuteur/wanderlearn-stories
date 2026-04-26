@@ -1,4 +1,15 @@
 import type { NextConfig } from "next";
+import withSerwistInit from "@serwist/next";
+
+const withSerwist = withSerwistInit({
+  swSrc: "src/app/sw.ts",
+  swDest: "public/sw.js",
+  // Only register the SW in production. Dev iteration is faster
+  // without it caching half-built routes.
+  disable: process.env.NODE_ENV !== "production",
+  cacheOnNavigation: true,
+  reloadOnOnline: true,
+});
 
 const nextConfig: NextConfig = {
   // A-Frame is loaded via dynamic import with ssr:false inside the scene
@@ -8,4 +19,4 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ["aframe"],
 };
 
-export default nextConfig;
+export default withSerwist(nextConfig);
