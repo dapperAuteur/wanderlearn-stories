@@ -1,5 +1,18 @@
 import { z } from "zod";
 
+/**
+ * Asset path: either an absolute URL (https://...) or a rooted path
+ * (/assets/...). MVP serves audio + images out of /public; post-MVP
+ * the same fields can point at Cloudinary/R2 without a schema change.
+ */
+const AssetUrl = z
+  .string()
+  .min(1)
+  .refine((s) => s.startsWith("/") || /^https?:\/\//i.test(s), {
+    message:
+      'must be an absolute URL ("https://...") or a rooted path ("/assets/...")',
+  });
+
 export const Standard = z.object({
   framework: z.literal("indiana-k"),
   code: z.string(),
@@ -10,10 +23,10 @@ export const InteractionTier1 = z.object({
   tier: z.literal(1),
   trigger: z.literal("gaze"),
   dwellMs: z.number().int().min(1000).max(5000),
-  audioUrl: z.string().url(),
+  audioUrl: AssetUrl,
   cardTitle: z.string(),
   cardBody: z.string(),
-  cardImageUrl: z.string().url().optional(),
+  cardImageUrl: AssetUrl.optional(),
 });
 
 export const InteractionTier2 = z.object({
@@ -23,8 +36,8 @@ export const InteractionTier2 = z.object({
   answerType: z.enum(["multiple-choice", "fill-blank"]),
   choices: z.array(z.string()).optional(),
   correctAnswer: z.string(),
-  successAudioUrl: z.string().url(),
-  failureAudioUrl: z.string().url(),
+  successAudioUrl: AssetUrl,
+  failureAudioUrl: AssetUrl,
 });
 
 export const InteractionTier3 = z.object({
@@ -56,8 +69,8 @@ export const Hub = z.object({
   chapterRange: z.string(),
   environmentModel: z.string(),
   skybox: z.string().optional(),
-  ambientAudio: z.string().url().optional(),
-  narrationAudio: z.string().url(),
+  ambientAudio: AssetUrl.optional(),
+  narrationAudio: AssetUrl,
   textExcerpt: z.string(),
   eggs: z.array(Egg).min(1),
 });

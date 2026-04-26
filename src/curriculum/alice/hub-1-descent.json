@@ -3,7 +3,7 @@
   "bookId": "alice",
   "chapterRange": "Ch. 1",
   "environmentModel": "/assets/models/alice/hub-1-descent.glb",
-  "narrationAudio": "https://res.cloudinary.com/witus/audio/alice/hub-1-narration.ogg",
+  "narrationAudio": "/assets/audio/alice/hub-1-narration.ogg",
   "textExcerpt": "Down, down, down. Would the fall never come to an end?",
   "eggs": [
     {
@@ -28,10 +28,10 @@
           "tier": 1,
           "trigger": "gaze",
           "dwellMs": 2000,
-          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h1-clocks-count.ogg",
+          "audioUrl": "/assets/audio/alice/h1-clocks-count.ogg",
           "cardTitle": "Count the clocks!",
           "cardBody": "1, 2, 3, 4, 5… how many clocks are floating past Alice?",
-          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h1-clocks-count.png"
+          "cardImageUrl": "/assets/img/alice/h1-clocks-count.png"
         }
       ]
     },
@@ -52,10 +52,10 @@
           "tier": 1,
           "trigger": "gaze",
           "dwellMs": 2000,
-          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h1-bookshelves.ogg",
+          "audioUrl": "/assets/audio/alice/h1-bookshelves.ogg",
           "cardTitle": "What's the title?",
           "cardBody": "This book is called Alice's Adventures in Wonderland. What do you see on the cover?",
-          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h1-bookshelves.png"
+          "cardImageUrl": "/assets/img/alice/h1-bookshelves.png"
         }
       ]
     },
@@ -76,10 +76,10 @@
           "tier": 1,
           "trigger": "gaze",
           "dwellMs": 2000,
-          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h1-rabbit-pace.ogg",
+          "audioUrl": "/assets/audio/alice/h1-rabbit-pace.ogg",
           "cardTitle": "Keep counting!",
           "cardBody": "The Rabbit hopped past saying 'six!' Can you keep going? 7, 8, 9…",
-          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h1-rabbit-pace.png"
+          "cardImageUrl": "/assets/img/alice/h1-rabbit-pace.png"
         }
       ]
     }

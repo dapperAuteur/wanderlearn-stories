@@ -3,7 +3,7 @@
   "bookId": "alice",
   "chapterRange": "Ch. 1–2",
   "environmentModel": "/assets/models/alice/hub-2-hall.glb",
-  "narrationAudio": "https://res.cloudinary.com/witus/audio/alice/hub-2-narration.ogg",
+  "narrationAudio": "/assets/audio/alice/hub-2-narration.ogg",
   "textExcerpt": "There were doors all round the hall, but they were all locked.",
   "eggs": [
     {
@@ -28,10 +28,10 @@
           "tier": 1,
           "trigger": "gaze",
           "dwellMs": 2000,
-          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h2-door-compare.ogg",
+          "audioUrl": "/assets/audio/alice/h2-door-compare.ogg",
           "cardTitle": "Tall and tiny.",
           "cardBody": "One door is taller than Alice. The other door is shorter. Which one is shorter?",
-          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h2-door-compare.png"
+          "cardImageUrl": "/assets/img/alice/h2-door-compare.png"
         }
       ]
     },
@@ -52,10 +52,10 @@
           "tier": 1,
           "trigger": "gaze",
           "dwellMs": 2000,
-          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h2-key-shape.ogg",
+          "audioUrl": "/assets/audio/alice/h2-key-shape.ogg",
           "cardTitle": "Circles and rectangles.",
           "cardBody": "The top of the key is a circle. The long part is a rectangle. Can you find another circle in the room?",
-          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h2-key-shape.png"
+          "cardImageUrl": "/assets/img/alice/h2-key-shape.png"
         }
       ]
     },
@@ -76,10 +76,10 @@
           "tier": 1,
           "trigger": "gaze",
           "dwellMs": 2000,
-          "audioUrl": "https://res.cloudinary.com/witus/audio/alice/h2-drink-bigger.ogg",
+          "audioUrl": "/assets/audio/alice/h2-drink-bigger.ogg",
           "cardTitle": "Bigger or smaller?",
           "cardBody": "Alice drinks from the bottle. Now she is smaller. If she eats the cake, will she be bigger or smaller?",
-          "cardImageUrl": "https://res.cloudinary.com/witus/img/alice/h2-drink-bigger.png"
+          "cardImageUrl": "/assets/img/alice/h2-drink-bigger.png"
         }
       ]
     }
