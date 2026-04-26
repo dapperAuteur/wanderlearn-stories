@@ -80,8 +80,10 @@ If not: `gh auth login`.
 
 ## C. Repo creation + first push
 
-The scaffold work has been **staged on the `chore/scaffold` branch
-locally** (no remote yet). Steps to publish:
+Initial scaffold + plans are already on `main` locally (BAM merged
+`chore/scaffold` into `main` before the remote existed). The first push
+goes directly to `main`. **Future work** still follows the
+branch→commit→push→stop rule.
 
 ### C1. Create the empty GitHub repo
 
@@ -96,35 +98,31 @@ gh repo create dapperAuteur/wanderlearn-stories \
 ```
 
 `--source=.` tells gh to use the current directory as the source. It
-adds the remote for you. **Do not** pass `--push` — we're going to push
-the chore/scaffold branch first (per the branch→commit→push→stop rule),
-not main.
+adds the remote for you. **Do not** pass `--push` — let C2 do that
+explicitly.
 
-### C2. Push the scaffold branch
+### C2. Push main
 
 ```bash
-git push -u origin chore/scaffold
+git push -u origin main
 ```
 
-### C3. Open a PR and merge to main
+This is a one-time exception to the branch→commit→push→stop rule:
+`main` has the initial scaffold history but no remote yet, so the first
+push has nowhere else to go. Once `main` is on origin, every subsequent
+change goes through a feature branch + PR.
 
-On the GitHub web UI:
+### C3. Push any pending feature branches
 
-- Open a PR from `chore/scaffold` → `main`.
-- Title: `chore: initial Next.js 16 scaffold`.
-- Body: link to [plans/README.md](README.md).
-- Merge with a merge commit (not squash) so the scaffold history is
-  preserved.
+If there are local branches that haven't merged into main yet (e.g.
+this `chore/sync-bootstrap-checklist` branch), push them now and open
+PRs in the GitHub UI.
+
+```bash
+git push -u origin <branch-name>
+```
 
 Per the ecosystem rule, **BAM merges; the agent does not**.
-
-After merge:
-
-```bash
-git fetch origin
-git checkout main
-git pull
-```
 
 ---
 
