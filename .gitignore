@@ -44,3 +44,8 @@ next-env.d.ts
 /assets-source/
 
 plans/
+
+# lighthouse-ci output
+/.lighthouseci/
+/lighthouseci-data/
+/test-results/

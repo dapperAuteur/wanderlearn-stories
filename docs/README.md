@@ -7,6 +7,7 @@ future iteration may serve them via a `/docs` route on the site.
 | File | Audience |
 |------|----------|
 | [easter-eggs.md](easter-eggs.md) | Anyone authoring or reviewing an easter egg — the smallest unit of learning content in the product |
+| [perf-measurement.md](perf-measurement.md) | How we measure performance — Lighthouse CI for chrome routes, manual rig protocol for the A-Frame scene |
 
 ## What's not in here
 
