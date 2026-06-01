@@ -31,7 +31,7 @@ export const config: VercelConfig = {
       ],
     },
   ],
-  // Crons land in Phase 3 (per plan 07 §"Retention"): a daily job that
+  // Crons land in Phase 3 (per plan 08 §"Retention"): a daily job that
   // purges events older than 18 months. Path will be
   // `/api/cron/purge-events`. Adding when the route exists, not before.
 };

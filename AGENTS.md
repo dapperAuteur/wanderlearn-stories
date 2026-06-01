@@ -50,7 +50,7 @@ See plan 00 (product brief, local).
 | Compliance              | COPPA. Verifiable parental consent before any child data collection.                 |
 | Success metric          | Next-day comprehension delta via FlashLearn-AI. Not gaze duration.                   |
 | Performance baseline    | Must run on iPhone SE 1st gen at ≥ 30 FPS. See plan 05.                              |
-| Source design doc       | Reference only. Not authoritative. See plan 09 for the cleanup list.                 |
+| Source design doc       | Reference only. Not authoritative. See plan 10 for the cleanup list.                 |
 
 ## Branch → commit → push → stop (BAM merges)
 
@@ -68,6 +68,23 @@ Applies to every repo in the BAM ecosystem.
   from GitHub.
 - One-off "merge X into main" instructions from BAM override this
   default; the default returns immediately afterward.
+- **Re-check `git branch --show-current` before EVERY commit, not just at
+  branch creation.** Mid-session, BAM may merge in a separate window and
+  your local `main` silently fast-forwards; a follow-up commit can then
+  land directly on `main` and bypass the merge gate.
+- **Bundle before handoff (Half 3):** keep branches small (one concern
+  each); when a session produces multiple branches, consolidate them into
+  one `bundle/<slug>-YYYY-MM-DD` branch with `git merge --no-ff` (no
+  squash), run `tsc + lint + build`, push, and file ONE
+  `./plans/user-tasks/NN-merge-bundle-<slug>.md` so BAM does one merge,
+  not N.
+- A checked-in `.githooks/pre-commit` refuses commits on `main`/`master`.
+  Activate once per clone: `git config core.hooksPath .githooks`. Full
+  rule: `gemini/witus/CLAUDE.md` §"Branch-hygiene rule".
+
+## Plans convention
+
+All implementation plans live in `./plans/` as markdown named `NN-description-of-plan.md` — two-digit numeric prefix, kebab-case slug, next available number, don't skip. Sub-queues: `./plans/user-tasks/NN-slug.md` (operator tasks), `./plans/bugs/`, `./plans/future/`. (`plans/` is typically gitignored — local working notes.)
 
 ## Tech constraints (carry-overs from the design doc, refactored)
 
@@ -83,7 +100,7 @@ Applies to every repo in the BAM ecosystem.
 - No `alert()`. Custom HTML overlays (`<dialog>`) only.
 - No Unity / Unreal — strictly WebXR.
 - No third-party advertising / behavioral SDKs anywhere on the site.
-  Plan 07 explains why.
+  Plan 08 explains why.
 
 ## What the original design doc got wrong (don't propagate)
 
@@ -96,8 +113,8 @@ Applies to every repo in the BAM ecosystem.
   plan 06.
 - Middle-school content tagged for kindergarten (Punnett squares, pH,
   thermal conduction) — cut. See plan 06.
-- "Sole Code Writer" Gem persona language — strip per plan 09.
+- "Sole Code Writer" Gem persona language — strip per plan 10.
 - 1024 px texture cap with no total memory ceiling — replaced with
   tiered budget incl. 96 MB low-end memory ceiling (plan 05).
 - Gaze duration as the success metric — replaced with next-day
-  comprehension delta via FlashLearn-AI (plan 08).
+  comprehension delta via FlashLearn-AI (plan 09).

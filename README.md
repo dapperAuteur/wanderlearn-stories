@@ -75,5 +75,5 @@ See [`AGENTS.md`](AGENTS.md). Notably:
 ## Bootstrap status
 
 The repo is at the **scaffold-staged** stage. Next steps for BAM live
-in the local `plans/10-bootstrap-checklist.md`.
+in the local `plans/11-bootstrap-checklist.md`.
 # wanderlearn-stories
