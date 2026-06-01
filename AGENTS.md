@@ -50,7 +50,7 @@ See plan 00 (product brief, local).
 | Compliance              | COPPA. Verifiable parental consent before any child data collection.                 |
 | Success metric          | Next-day comprehension delta via FlashLearn-AI. Not gaze duration.                   |
 | Performance baseline    | Must run on iPhone SE 1st gen at ≥ 30 FPS. See plan 05.                              |
-| Source design doc       | Reference only. Not authoritative. See plan 09 for the cleanup list.                 |
+| Source design doc       | Reference only. Not authoritative. See plan 10 for the cleanup list.                 |
 
 ## Branch → commit → push → stop (BAM merges)
 
@@ -83,7 +83,7 @@ Applies to every repo in the BAM ecosystem.
 - No `alert()`. Custom HTML overlays (`<dialog>`) only.
 - No Unity / Unreal — strictly WebXR.
 - No third-party advertising / behavioral SDKs anywhere on the site.
-  Plan 07 explains why.
+  Plan 08 explains why.
 
 ## What the original design doc got wrong (don't propagate)
 
@@ -96,8 +96,8 @@ Applies to every repo in the BAM ecosystem.
   plan 06.
 - Middle-school content tagged for kindergarten (Punnett squares, pH,
   thermal conduction) — cut. See plan 06.
-- "Sole Code Writer" Gem persona language — strip per plan 09.
+- "Sole Code Writer" Gem persona language — strip per plan 10.
 - 1024 px texture cap with no total memory ceiling — replaced with
   tiered budget incl. 96 MB low-end memory ceiling (plan 05).
 - Gaze duration as the success metric — replaced with next-day
-  comprehension delta via FlashLearn-AI (plan 08).
+  comprehension delta via FlashLearn-AI (plan 09).
