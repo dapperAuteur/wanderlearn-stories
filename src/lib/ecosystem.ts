@@ -62,4 +62,52 @@ export const ecosystemProducts: EcosystemProduct[] = [
     href: "https://awesomewebstore.com",
     status: "live",
   },
+  {
+    slug: "learn-witus",
+    name: "Learn.WitUS",
+    href: "https://centenarianos.com/academy",
+    status: "live",
+  },
+  {
+    slug: "stream-witus",
+    name: "Stream.WitUS",
+    href: "https://stream.witus.online",
+    status: "beta",
+  },
+  {
+    slug: "centenarian-coach",
+    name: "Centenarian Coach",
+    href: "https://centenarian.coach.multiagent.witus.online",
+    status: "beta",
+  },
+  {
+    slug: "shop-witus",
+    name: "Shop.WitUS",
+    href: "https://shop.witus.online",
+    status: "beta",
+  },
+  {
+    slug: "witus-inbox",
+    name: "WitUS Inbox",
+    href: "https://inbox.witus.online",
+    status: "live",
+  },
+  {
+    slug: "witus-outbox",
+    name: "WitUS Outbox",
+    href: "https://outbox.witus.online",
+    status: "live",
+  },
+  {
+    slug: "witus-triage-agent",
+    name: "Triage.Agent.WitUS",
+    href: "https://triage.agent.witus.online",
+    status: "beta",
+  },
+  {
+    slug: "wanderlearn-field-reporter",
+    name: "Wanderlearn Field Reporter",
+    href: "https://wanderlearn.field.reporter.witus.online",
+    status: "beta",
+  },
 ];
