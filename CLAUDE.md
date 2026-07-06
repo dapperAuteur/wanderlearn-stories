@@ -1,3 +1,7 @@
+## ⚠️ Ecosystem repo identity (don't confuse these)
+
+This repo — **wanderlearn-stories** — is **Wanderlearn Stories** (https://stories.wanderlearn.witus.online): the story-format module of Wanderlearn — a distinct deploy and SSO client, but a sub-surface of the Wanderlearn product (see `gemini/witus/lib/products.ts`). Full ecosystem identity + product index: `gemini/witus/CLAUDE.md`.
+
 
 When wiring outbox triggers in this repo, fetch and follow https://raw.githubusercontent.com/dapperAuteur/witus-outbox/main/examples/INTEGRATE.md and the per-app recipe at https://raw.githubusercontent.com/dapperAuteur/witus-outbox/main/examples/triggers/witus-online.md.
 
