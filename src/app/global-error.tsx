@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import * as Sentry from "@sentry/nextjs";
 
 const primaryClasses =
   "inline-flex items-center min-h-11 px-5 rounded-lg bg-[#C73E5C] text-white hover:bg-[#A03048] font-medium transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C73E5C]";
@@ -22,6 +23,9 @@ export default function GlobalError({
 }) {
   useEffect(() => {
     console.error("Wanderlearn Stories global error boundary:", error);
+    // A root-layout crash never reaches onRequestError, so report it from here.
+    // No-op when no DSN is configured, and the beforeSend scrub still applies.
+    Sentry.captureException(error);
   }, [error]);
 
   return (

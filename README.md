@@ -35,6 +35,7 @@ Then open http://localhost:3000.
 | Auth             | Better Auth (post-bootstrap)                                            |
 | Spaced rep       | FlashLearn-AI HTTP API                                                  |
 | Media            | Cloudinary (shared WitUS tenant)                                        |
+| Error monitoring | Better Stack via the Sentry SDK (`@sentry/nextjs`), opt-in by DSN       |
 | Hosting          | Vercel                                                                  |
 
 See plan 02 (tech-stack rationale, local).
@@ -62,6 +63,34 @@ src/
   db/                     Drizzle schemas
   auth/                   Better Auth + parent-gate logic
 ```
+
+## Error monitoring
+
+Crashes report to **Better Stack**, which speaks the Sentry protocol, so
+`@sentry/nextjs` is the client. It is **entirely opt-in**: with no
+`SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN` set, no client is initialized, so
+nothing is sent and nothing is buffered. See `.env.example` and
+`plans/user-tasks/32-betterstack-dsn.md` (local) for provisioning.
+
+| File | Role |
+|------|------|
+| `sentry.server.config.ts` / `sentry.edge.config.ts` | Per-runtime init, DSN-guarded |
+| `src/instrumentation.ts` | `register()` per `NEXT_RUNTIME` + `onRequestError` |
+| `src/instrumentation-client.ts` | Browser init + `onRouterTransitionStart` |
+| `src/lib/sentry-scrub.ts` | `beforeSend` scrubber (see below) |
+| `src/lib/sentry-scrub.test.ts` | Leak tests + over-redaction counter-tests |
+
+Because this is a COPPA product, every event passes through a key-aware
+scrubber before it leaves: parent emails, magic-link and consent tokens,
+session cookies, auth headers and vendor API keys are redacted, and
+`tracesSampleRate` / both replay rates are `0` (no session recording of a
+child, ever). Two constraints on that file if you edit it:
+
+- **No regex lookbehind.** It ships in a client chunk and lookbehind is a
+  parse error on iOS Safari below 16.4, which would break the chunk even
+  with no DSN configured. A committed test enforces this.
+- **Assemble test fixtures at runtime.** Never write a secret-shaped
+  string literal in a test; push protection rejects the push.
 
 ## Repo conventions
 
