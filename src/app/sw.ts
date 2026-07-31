@@ -12,7 +12,7 @@
 
 import { defaultCache } from "@serwist/next/worker";
 import type { PrecacheEntry, SerwistGlobalConfig } from "serwist";
-import { Serwist } from "serwist";
+import { NetworkOnly, Serwist } from "serwist";
 
 declare global {
   interface WorkerGlobalScope extends SerwistGlobalConfig {
@@ -30,7 +30,21 @@ const serwist = new Serwist({
   skipWaiting: true,
   clientsClaim: true,
   navigationPreload: true,
-  runtimeCaching: defaultCache,
+  runtimeCaching: [
+    // MUST stay ahead of the defaultCache spread below: serwist takes the FIRST matching
+    // rule. defaultCache ships a catch-all for GET requests to any
+    // same-origin /api/* path, handled by NetworkFirst with a 24 hour
+    // expiration (maxAgeSeconds: 1440 * 60, cacheName "apis"). Left alone
+    // that rule caches /api/health, so an installed PWA client could replay
+    // a day-old {"ok":true} long after the database went down and hand the
+    // uptime monitor a green check for an app that is not serving.
+    {
+      matcher: ({ sameOrigin, url: { pathname } }) =>
+        sameOrigin && pathname === "/api/health",
+      handler: new NetworkOnly(),
+    },
+    ...defaultCache,
+  ],
 });
 
 serwist.addEventListeners();
