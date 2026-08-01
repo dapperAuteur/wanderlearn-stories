@@ -92,6 +92,41 @@ child, ever). Two constraints on that file if you edit it:
 - **Assemble test fixtures at runtime.** Never write a secret-shaped
   string literal in a test; push protection rejects the push.
 
+## Uptime monitoring: point monitors at `/api/health`, not `/`
+
+`GET /api/health` (and `HEAD /api/health`) is the liveness endpoint. It is
+public, unauthenticated, and runs `select 1` against Neon on every request.
+
+| Outcome | Status | Body |
+|---------|--------|------|
+| Database answered | `200` | `{"ok":true,"checks":{"db":"ok"}}` |
+| Database unreachable, timed out, or `DATABASE_URL` unset | `503` | `{"ok":false,"error":"database_unreachable"}` |
+
+**Configure the Better Stack monitor against `https://<host>/api/health`.**
+Pointing it at `/` is what this replaces: the homepage can serve `200` straight
+from CDN cache while the database is down, so a green check there proves only
+that the edge is up.
+
+Properties worth preserving if you touch `src/app/api/health/route.ts`:
+
+- **Really queries the database.** Not static JSON. The client is imported
+  dynamically inside the `try`, so a missing `DATABASE_URL` answers `503` too,
+  rather than a `500` whose stack trace could quote the connection string.
+- **Never echoes the error.** The `catch` takes no binding, the body is one of
+  the two literals above, and the log line is a constant string.
+- **Touches no child data.** The probe is a constant, not a table read. It
+  never selects or counts a child, guardian, parent, consent, or story row, and
+  the response carries no counts, versions, hostnames, or timings.
+- **4 second budget** via `Promise.race`, so a hung socket still yields a
+  verdict.
+- **Never cached.** `force-dynamic`, `revalidate = 0`, `Cache-Control:
+  no-store` — and `src/app/sw.ts` puts a `NetworkOnly` rule for `/api/health`
+  **ahead of** the `...defaultCache` spread. That matters: serwist's
+  `defaultCache` ends with a catch-all that caches every same-origin `GET
+  /api/*` with `NetworkFirst` for 24 hours, and serwist takes the first
+  matching rule. Without the exclusion an installed PWA client could replay a
+  day-old `{"ok":true}` after the database had gone down.
+
 ## Repo conventions
 
 See [`AGENTS.md`](AGENTS.md). Notably:
