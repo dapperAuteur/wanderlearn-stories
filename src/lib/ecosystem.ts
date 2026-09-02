@@ -34,8 +34,8 @@ export const ecosystemProducts: EcosystemProduct[] = [
   },
   {
     slug: "wanderlearn",
-    name: "Wanderlearn",
-    href: "https://wanderlearn.witus.online",
+    name: "Wanderlust",
+    href: "https://wanderlust.witus.online",
     status: "beta",
   },
   {
@@ -65,7 +65,7 @@ export const ecosystemProducts: EcosystemProduct[] = [
   {
     slug: "learn-witus",
     name: "Learn.WitUS",
-    href: "https://centenarianos.com/academy",
+    href: "https://learn.witus.online",
     status: "live",
   },
   {
