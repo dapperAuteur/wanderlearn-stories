@@ -18,6 +18,19 @@ const nextConfig: NextConfig = {
   // server-side. Marking it external keeps the bundler from trying to
   // pre-evaluate it during SSR builds.
   serverExternalPackages: ["aframe"],
+
+  // PostHog ingest is proxied through our own origin (witus-online
+  // lib/analytics/INTEGRATE.md step 2) so ad blockers don't drop events.
+  // PostHog's endpoints use trailing slashes, which Next would 308 before the
+  // rewrite runs, so trailing-slash redirects are off app-wide.
+  skipTrailingSlashRedirect: true,
+  async rewrites() {
+    return [
+      // /static first: assets come from a different upstream host than ingest.
+      { source: "/ingest/static/:path*", destination: "https://us-assets.i.posthog.com/static/:path*" },
+      { source: "/ingest/:path*", destination: "https://us.i.posthog.com/:path*" },
+    ];
+  },
 };
 
 // Sentry's build plugin wraps outermost so it sees the final webpack config.
