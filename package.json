@@ -53,5 +53,11 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^3.2.0"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "overrides": {
+      "three-bmfont-text": "github:dmarcos/three-bmfont-text#eed4878795be9b3e38cf6aec6b903f56acd1f695"
+    }
   }
 }
