@@ -36,6 +36,7 @@ Then open http://localhost:3000.
 | Spaced rep       | FlashLearn-AI HTTP API                                                  |
 | Media            | Cloudinary (shared WitUS tenant)                                        |
 | Error monitoring | Better Stack via the Sentry SDK (`@sentry/nextjs`), opt-in by DSN       |
+| Product analytics| PostHog (`posthog-js`), anonymous, opt-in by key — see below            |
 | Hosting          | Vercel                                                                  |
 
 See plan 02 (tech-stack rationale, local).
@@ -63,6 +64,30 @@ src/
   db/                     Drizzle schemas
   auth/                   Better Auth + parent-gate logic
 ```
+
+## Product analytics
+
+Page views report to the **shared WitUS PostHog project** (US region), tagged
+`app: "stories"`. It follows the ecosystem standard in witus-online
+`lib/analytics/INTEGRATE.md` and is **entirely opt-in**: with no
+`NEXT_PUBLIC_POSTHOG_KEY` set, PostHog never starts and nothing is sent.
+
+What it does **not** do, by design: no cookies or localStorage
+(`persistence: "memory"`), no `identify()`, no autocapture of clicks or
+typing, no session replay. Every visit is anonymous and forgotten when the
+tab closes.
+
+| File | Role |
+|------|------|
+| `src/lib/analytics/posthog-provider.tsx` | Init + route views. Copied unchanged from witus — do not edit |
+| `src/lib/analytics/capture.ts` | The only way to send an event. Copied unchanged |
+| `src/lib/analytics/events.ts` | This app's event names and its `ANALYTICS_APP` slug |
+| `next.config.ts` | Rewrites `/ingest/*` to PostHog so ad blockers don't drop events |
+
+No app route may start with `/ingest`. Before adding an event, read the
+naming rules in `events.ts`, and never send anything that could identify a
+child or parent. To check for drift, run witus's
+`scripts/check-posthog-conformance.mjs` against this repo.
 
 ## Error monitoring
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import { PostHogProvider } from "@/lib/analytics/posthog-provider";
 import { SITE_URL, PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/ecosystem";
 
 const geist = Geist({
@@ -63,6 +64,11 @@ export default function RootLayout({
         </main>
         <Footer />
         <Toaster richColors closeButton position="top-right" />
+        {/* Anonymous analytics. Inert until NEXT_PUBLIC_POSTHOG_KEY is set. */}
+        <PostHogProvider
+          apiKey={process.env.NEXT_PUBLIC_POSTHOG_KEY ?? null}
+          apiHost="/ingest"
+        />
       </body>
     </html>
   );
