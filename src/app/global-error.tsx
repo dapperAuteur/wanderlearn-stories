@@ -51,6 +51,9 @@ export default function GlobalError({
             <button type="button" onClick={reset} className={primaryClasses}>
               Reload
             </button>
+            {/* A full-page load on purpose: global-error replaces the root layout, so a
+                client-side <Link> would navigate inside the tree that just failed. */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a href="/" className={secondaryClasses}>
               Home
             </a>
