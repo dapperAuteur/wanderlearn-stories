@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  three-bmfont-text: github:dmarcos/three-bmfont-text#eed4878795be9b3e38cf6aec6b903f56acd1f695
+
 importers:
 
   .:
