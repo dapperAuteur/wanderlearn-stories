@@ -42,6 +42,12 @@ export default function GlobalError({
             Wanderlearn Stories ran into an error before the page could
             load. Reloading usually fixes it.
           </p>
+          {/* The root layout and its header failed, so this minimal shell carries its own links. */}
+          <p style={{ margin: "12px 0", fontSize: 14 }}>
+            <a href="/account" style={{ color: "inherit" }}>
+              Sign in
+            </a>
+          </p>
           {error.digest && (
             <p className="mt-3 text-sm text-[#7E6273] font-mono">
               Error reference: {error.digest}
